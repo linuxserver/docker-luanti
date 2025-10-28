@@ -25,6 +25,7 @@ RUN \
     curl-dev \
     doxygen \
     gettext-dev \
+    git \
     gmp-dev \
     hiredis-dev \
     icu-dev \
@@ -36,7 +37,6 @@ RUN \
     libtool \
     libvorbis-dev \
     libxi-dev \
-    luajit-dev \
     mesa-dev \
     ncurses-dev \
     ninja-build \
@@ -56,13 +56,17 @@ RUN \
     libintl \
     libpq \
     libstdc++ \
-    luajit \
     lua-socket \
     sdl2 \
     sqlite \
     sqlite-libs \
     zstd \
     zstd-libs && \
+  echo "**** compile latest luajit ****" && \
+  git clone https://luajit.org/git/luajit.git && \
+  cd luajit && \
+  make amalg PREFIX=/usr && \
+  make install PREFIX=/usr && \
   echo "**** compile prometheus-cpp ****" && \
   mkdir -p /tmp/prometheus-cpp && \
   PROM_URL=$(curl -sX GET "https://api.github.com/repos/jupp0r/prometheus-cpp/releases/latest" \
