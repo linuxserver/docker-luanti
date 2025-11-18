@@ -82,5 +82,6 @@ init_diagram: |
   "luanti:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "03.11.25:", desc: "Use latest LuaJIT from git to fix math bugs"}
   - {date: "09.07.25:", desc: "Rebase to Alpine 3.22."}
   - {date: "30.01.25:", desc: "Initial Release."}
