@@ -286,5 +286,6 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **03.11.25:** - Use latest LuaJIT from git to fix math bugs
 * **09.07.25:** - Rebase to Alpine 3.22.
 * **30.01.25:** - Initial Release.
